@@ -1,0 +1,48 @@
+@import '../../styles/variables.scss';
+
+.list-video {
+    padding-top: 20px;
+
+    .list-video__container {
+
+        .list-video__title {
+            margin-top: 40px;
+            font-size: 18px;
+            padding-bottom: 20px;
+        }
+
+        .list-video__btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .list-video__list {
+                flex-wrap: wrap;
+                display: flex;
+                gap: 10px;
+
+                .list-video__item {
+                    font-size: 20px;
+                    border: 1px solid $primary-color;
+                    padding: 8px 15px;
+                    border-radius: 3px;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: $primary-color;
+                    }
+
+                    &.active {
+                        background-color: $primary-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .list-video__error {
+        color: red;
+        font-size: 20px;
+        text-align: center;
+    }
+}

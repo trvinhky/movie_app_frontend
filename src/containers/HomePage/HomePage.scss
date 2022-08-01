@@ -1,0 +1,144 @@
+@import '../../styles/variables.scss';
+
+.home-container {
+    padding-top: 80px;
+
+    .home-header {
+        display: flex;
+        height: 400px;
+        overflow: hidden;
+        gap: 10px;
+
+        .home-slider {
+            flex: 1;
+        }
+
+        .home-top {
+            width: 30%;
+            padding: 10px;
+        }
+    }
+
+    .home-body {
+
+        .home-more {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            .home-more__title {
+                padding: 40px 0 20px;
+                font-size: 25px;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+
+            .home-more__content {
+                height: 400px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 20px 120px;
+
+                .home-more__box {
+                    flex: 1;
+                    height: 100%;
+                    display: flex;
+                    gap: 20px;
+
+                    .home-more__img {
+                        width: 40%;
+                        height: 100%;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+
+                    .home-more__text {
+                        flex: 1;
+                        display: flex;
+                        justify-content: space-between;
+                        flex-direction: column;
+                        font-size: 18px;
+
+                        .home-more__title {
+                            text-align: center;
+                            line-height: 1.5;
+                        }
+
+                        .home-more__infor {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            gap: 20px;
+
+                            .home-more__like {
+                                text-align: right;
+
+                                i {
+                                    font-size: 18px;
+                                    margin-right: 10px;
+                                    color: #e84118;
+                                }
+                            }
+
+                            .home-more__watch {
+                                color: $primary-color;
+                                background-color: transparent;
+                                border: 1px solid $primary-color;
+                                padding: 10px 20px;
+                                font-size: 18px;
+                                border-radius: 3px;
+                                display: flex;
+                                align-items: center;
+                                transition: all 0.3s linear;
+
+                                i {
+                                    font-size: 18px;
+                                    margin-left: 10px;
+                                }
+
+                                &:hover {
+                                    background-color: $primary-color;
+                                    color: $white-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .home-footer {
+        padding: 40px 0 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .home-footer__paging {
+            display: flex;
+            gap: 10px;
+
+            .home-footer__item {
+                border: 1px solid $primary-color;
+                padding: 8px 15px;
+                font-size: 16px;
+                cursor: pointer;
+                border-radius: 5px;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    background-color: $primary-color;
+                    color: $white-color;
+                }
+
+                &.active {
+                    background-color: $primary-color;
+                    color: $white-color;
+                }
+            }
+        }
+    }
+}

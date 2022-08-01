@@ -1,0 +1,56 @@
+@import '../../../styles/variables.scss';
+
+.user-infor {
+    margin-top: 60px;
+
+    .user-infor__conatiner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .user-infor__content {
+            text-align: center;
+    
+            @mixin infor {
+                display: flex;
+                gap: 10px;
+    
+                p {
+                    font-size: 18px;
+                }
+    
+                span {
+                    color: $primary-color;
+    
+                    i {
+                        margin-left: 5px;
+                    }
+                }
+            }
+    
+            .user-infor__view {
+                @include infor;
+    
+                span {
+    
+                    i {
+                        color: $white-color;
+                    }
+                }
+            }
+    
+            .user-infor__like {
+                @include infor;
+                margin-top: 30px;
+    
+                span {
+    
+                    i {
+                        color: red;
+                    }
+                }
+            }
+        }
+    }
+
+}

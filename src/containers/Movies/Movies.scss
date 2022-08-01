@@ -1,0 +1,36 @@
+.movies {
+    margin-top: 80px;
+
+    .movies-container {
+
+        .movies-cast {
+            padding: 40px 0;
+
+            .movies-cast__title {
+                font-size: 25px;
+                font-weight: 500;
+                text-transform: uppercase;
+                padding-bottom: 20px;
+            }
+
+            .movies-cast__group {
+                display: flex;
+                gap: 20px;
+
+                .movies-cast__card {
+                    
+                    img {
+                        border-radius: 10px;
+                        height: 200px;
+                        width: 200px;
+                    }
+
+                    h4 {
+                        padding: 8px 0;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}

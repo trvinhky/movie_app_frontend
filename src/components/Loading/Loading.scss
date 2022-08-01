@@ -1,0 +1,63 @@
+@import '../../styles/variables.scss';
+
+.loading {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($black-color, $alpha: 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .loading-container {
+        width: 4rem;
+        height: 4rem;
+        position: relative;
+
+        @mixin elementsLoading($value, $n) {
+            &:nth-child(#{$n}) {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                transform: rotate(calc($value * 45deg));
+        
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 15px;
+                    height: 15px;
+                    border: 4px solid #00aefd;
+                    border-radius: 5rem;
+                    filter: hue-rotate(calc($value * 45deg));
+                    animation: loading 0.25s infinite;
+                    animation-delay: calc($value * 0.025s);
+                    animation-timing-function: linear;
+                }
+            }
+        }
+    
+        div {
+            @include elementsLoading(1, 1);
+            @include elementsLoading(2, 2);
+            @include elementsLoading(3, 3);
+            @include elementsLoading(4, 4);
+            @include elementsLoading(5, 5);
+            @include elementsLoading(6, 6);
+            @include elementsLoading(7, 7);
+            @include elementsLoading(8, 8);
+        }
+    }
+}
+  
+@keyframes loading {
+    to {
+      transform: scale(0);
+    }
+}

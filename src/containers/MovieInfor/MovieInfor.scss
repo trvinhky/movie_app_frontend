@@ -1,0 +1,117 @@
+@import '../../styles/variables.scss';
+
+.movie-infor {
+
+    .movie-infor__container {
+        position: relative;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .movie-inofor__like {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px;
+            font-size: 18px;
+            z-index: 6;
+            cursor: pointer;
+            color: $white-color;
+            width: fit-content;
+
+            &.active {
+                color: red;
+            }
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $black-color;
+            opacity: 0.6;
+        }
+
+        .movie-infor__group {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            z-index: 5;
+            display: flex;
+            align-items: flex-end;
+            gap: 30px;
+            padding: 20px 40px;
+
+            .movie-infor__left {
+                overflow: hidden;
+                border-radius: 10px;
+                box-shadow: 0 0 5px $white-color;
+                width: 30%;
+                height: 100%;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .movie-infor__right {
+                flex: 1;
+
+                .movie-infor__title {
+                    padding-bottom: 20px;
+                    position: relative;
+                    z-index: 5;
+                    font-size: 30px;
+                    font-weight: 600;
+                    text-align: center;
+                }
+
+                p {
+                    font-style: italic;
+                    line-height: 1.5;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 5;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
+
+                h6 {
+                    border-left: 2px solid $primary-color;
+                    margin-top: 10px;
+                    padding-left: 5px;
+
+                    span {
+                        padding-right: 5px;
+                    }
+                }
+
+                .movie-infor__category {
+                    padding-top: 30px;
+                    display: flex;
+                    justify-content: flex-end;
+
+                    .movie-infor__name {
+                        padding-right: 5px;
+                        color: $primary-color;
+                        font-weight: 600;
+                    }
+
+                    .movie-infor__list {
+                        display: flex;
+
+                        .movie-infor__item {
+                            padding-left: 8px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

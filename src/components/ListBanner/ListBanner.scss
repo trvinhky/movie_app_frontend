@@ -1,0 +1,80 @@
+.list-banner {
+    margin-top: 40px;
+
+    .list-banner__container {
+        position: relative;
+
+        .list-banner__title {
+            font-size: 25px;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding-bottom: 20px;
+        }
+
+        .list-banner__box {
+
+            .list-banner__cart {
+                display: flex;
+                flex-direction: column;
+                height: 250px;
+                padding: 0 6px;
+                cursor: pointer;
+
+                img {
+                    flex: 1;
+                    width: 100%;
+                }
+
+                h3 {
+                    padding: 10px 0;
+                    font-size: 18px;
+                    font-weight: 500;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
+            }
+
+            .list-banner-prev {
+                position: absolute;
+                top: 10px;
+                right: 40px;
+                left: unset;   
+                width: 25px;
+                height: 25px;
+                font-size: 18px;
+            }
+
+            .list-banner-next {
+                position: absolute;
+                top: 10px;
+                right: 0;  
+                width: 25px;
+                height: 25px;
+                font-size: 18px;
+            }
+
+            .slick-slider {
+                position: unset;
+            }
+
+            .slick-prev::before {
+                font-family: "Font Awesome 6 Free";
+                content: "\f177";
+                display: inline-block;
+                vertical-align: middle;
+                font-weight: 900;
+            }
+
+            .slick-next::before {
+                font-family: "Font Awesome 6 Free";
+                content: "\f178";
+                display: inline-block;
+                vertical-align: middle;
+                font-weight: 900;
+            }
+        }
+    }
+}

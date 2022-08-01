@@ -1,0 +1,82 @@
+@import '../../../styles/variables.scss';
+
+.trailer {
+    height: 600px;
+
+    .trailer-container {
+        height: 100%;
+        position: relative;
+
+        .trailer-error {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: red;
+            font-size: 20px;
+        }
+
+        .trailer-controls {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #303030;
+            font-size: 20px;
+            padding: 10px;
+            cursor: pointer;
+
+            &:hover {
+
+                .trailer-quality {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateY(0);
+                }
+            }
+
+            .trailer-quality {
+                transition: all 0.5s ease;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-100%);
+                white-space: nowrap;
+                position: absolute;
+                right: 100%;
+                top: 0;
+                background-color: #303030;
+                cursor: pointer;
+                text-align: center;
+
+                .trailer-quality__title {
+                    font-size: 18px;
+                    padding: 10px 15px;
+                }
+
+                .trailer-quality__list {
+                    display: flex;
+                    align-items: center;
+                    font-size: 16px;
+                    color: $white-color;
+                    background-color: #303030;
+                    transition: all 0.3s ease;
+
+                    .trailer-quality__item {
+                        background-color: inherit;
+                        color: $white-color;
+                        padding: 8px 15px;
+
+                        &:hover {
+                            background-color: $white-color;
+                            color: $black-color;
+                        }
+
+                        &.active {
+                            background-color: $white-color;
+                            color: $black-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

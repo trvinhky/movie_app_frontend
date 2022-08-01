@@ -1,0 +1,56 @@
+@import '../../../styles/variables.scss';
+
+.history {
+    margin-top: 40px;
+
+    .history-container {
+        position: relative;
+        
+        .history-wapper {
+            height: 100px;
+            display: flex;
+            gap: 20px;
+            padding: 10px;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background-color: #333;
+            }
+            
+            .history-img {
+                height: 100%;
+                width: 100px;
+            }
+            
+            .history-card {
+                flex: 1;
+    
+                .history-card__title {
+                    display: flex;
+                    padding-bottom: 20px;
+                    font-size: 20px;
+                    padding-right: 20px;
+                }
+    
+                .history-card__category {
+    
+                    span:first-child {
+                        padding-right: 10px;
+                        color: $primary-color;
+                    }
+                }
+    
+            }
+        }
+        
+        .history-delete {
+            cursor: pointer;
+            font-size: 25px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 2;
+            padding: 6px 10px;
+        }
+    }
+}

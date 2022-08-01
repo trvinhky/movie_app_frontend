@@ -1,0 +1,140 @@
+@import '../../styles/variables.scss';
+
+.preview {
+    margin-top: 80px;
+
+    .preview-container {
+
+        .preview-intro {
+            margin-bottom: 40px;
+            padding: 20px 40px;
+            height: 400px;
+            display: flex;
+            gap: 20px;
+            border-radius: 5px;
+            background-image: linear-gradient(to bottom right, $black-color, #999);
+
+            .preview-intro__left {
+                width: 30%;
+                border-radius: 5px;
+                overflow: hidden;
+            }
+
+            .preview-intro__right {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .preview-intro__title {
+                    font-size: 20px;
+                    font-weight: 500;
+                    text-align: center;
+                    text-transform: uppercase;
+                    padding-top: 20px;
+                }
+
+                .preview-intro__group {
+                    text-align: right;
+                    font-size: 18px;
+
+                    i {
+                        margin-right: 5px;
+                        color: #e84118;
+                    }
+                }
+            }
+        }
+
+        .preview-more {
+            padding-top: 40px;
+            
+            .preview-more__title {
+                font-size: 20px;
+                font-weight: 500;
+                text-transform: uppercase;
+                margin-bottom: 20px;
+            }
+            
+            .preview-more__list{
+                
+                .preview-more__item {
+                    border: 1px solid red;
+                    height: 300px;
+                    padding: 20px 40px;
+                    display: flex;
+                    gap: 20px;
+
+                    .preview-more__left {
+                        width: 30%;
+                    }
+
+                    .preview-more__right {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        flex: 1;
+
+                        .preview-more__name {
+                            text-align: center;
+                            font-size: 18px;
+                            font-weight: 500;
+                            text-transform: uppercase;
+                        }
+
+                        .preview-more__box {
+                            display: flex;
+                            gap: 20px;
+
+                            .preview-more__tag {
+                                flex: 1;
+                                font-size: 16px;
+
+                                .preview-more__tagName {
+                                    font-weight: 500;
+                                    white-space: nowrap;
+                                    padding-bottom: 10px;
+                                    color: $primary-color;
+                                }
+
+                                .preview-more__tagList {
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    gap: 5px;
+                                }
+                            }
+
+                            .preview-more__btn {
+                                flex: 1;
+                                display: flex;
+                                justify-content: flex-end;
+
+                                button {
+                                    border: 1px solid $primary-color;
+                                    background-color: transparent;
+                                    padding: 8px 20px;
+                                    color: $primary-color;
+                                    font-size: 16px;
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 5px;
+                                    border-radius: 2px;
+                                    transition: all 0.3s ease;
+
+                                    i {
+                                        font-size: 18px;
+                                    }
+
+                                    &:hover {
+                                        background-color: $primary-color;
+                                        color: $white-color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

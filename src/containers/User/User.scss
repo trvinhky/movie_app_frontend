@@ -1,0 +1,88 @@
+@import '../../styles/variables.scss';
+
+.user {
+    margin-top: 100px;
+
+    .user-profile {
+        display: flex;
+        gap: 30px;
+
+        .user-profile__left {
+            width: 30%;
+            
+            .user-profile__content {
+                padding: 40px 0;
+                border-right: 1px solid $white-color;
+
+                .user-profile__infor {
+    
+                    .user-profile__avatar {
+                        width: 200px;
+                        height: 200px;
+                        border-radius: 50%;
+                        margin: 0 auto;
+                        position: relative;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+
+                        label {
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+                            font-size: 20px;
+                            cursor: pointer;
+                            padding: 5px;
+                            opacity: 0.8;
+                            color: $white-color;
+    
+                            &:hover {
+                                opacity: 1;
+                            }
+                        }
+                    }
+    
+                    .user-profile__text {
+                        margin-top: 40px;
+                        font-size: 20px;
+                        color: $gray-color;
+                        padding-bottom: 10px;
+                    }
+    
+                    .user-profile__name {
+                        font-size: 18px;
+                        text-align: center;
+                    }
+                }
+    
+                .user-profile__list {
+                    margin-top: 60px;
+    
+                    .user-profile__item {
+                        font-size: 18px;
+                        padding: 10px 0;
+                        margin-top: 10px;
+                        border-bottom: 1px solid $gray-color;
+                        margin-right: 20px;
+                        cursor: pointer;
+    
+                        &.active {
+                            color: $primary-color;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .user-profile__right {
+            flex: 1;
+
+            .user-profile__title {
+                text-align: center;
+                text-transform: uppercase;
+                font-size: 30px;
+            }
+        }
+    }
+}

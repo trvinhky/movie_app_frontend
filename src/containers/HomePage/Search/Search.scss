@@ -1,0 +1,47 @@
+.top-search {
+    height: 100%;
+
+    .top-search__title {
+        font-size: 18px;
+        text-transform: capitalize;
+        padding-bottom: 5px;
+    }
+
+    .top-search__list {
+        padding: 10px 0;
+        overflow-y: auto;
+        height: 100%;
+
+        .top-search__item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            cursor: pointer;
+            padding: 10px;
+
+            &:hover {
+                background-color: #333;
+            }
+
+            .top-search-item__img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .top-search-item__group {
+                flex: 1;
+                margin-bottom: 25px;
+
+                .top-search-item__title {
+                    font-size: 15px;
+                    font-weight: 500;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 1;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+}
