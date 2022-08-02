@@ -2,7 +2,6 @@ import './Video.scss'
 import { useState, useEffect } from 'react'
 import { getMovieMedia } from '../../services/APIServices'
 import ReactPlayer from 'react-player'
-import img from '../../assets/images/background-3d.jpg'
 import { selectUserInfor } from '../../stores/userFeature/selectors'
 import { useSelector } from 'react-redux'
 import { createNewHistory } from '../../services/userServices'
@@ -67,7 +66,7 @@ const Video = ({ data, category, contentId }) => {
         url: movies?.mediaUrl,
         width: '100%',
         height: '100%',
-        light: img,
+        light: 'https://github.com/trvinhky/image_app/blob/main/movie_app/background-3d.jpg?raw=true',
         playing: playing,
         controls: true,
         config: {

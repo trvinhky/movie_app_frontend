@@ -160,7 +160,12 @@ const Login = () => {
     }
 
     return (
-        <div className="login">
+        <div
+            className="login"
+            style={{
+                backgroundImage: 'url(https://github.com/trvinhky/image_app/blob/main/movie_app/background.jpg?raw=true)'
+            }}
+        >
             <div className="container">
                 <div className="login-logo">
                     <Link to={path.HOME}>

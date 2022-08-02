@@ -1,5 +1,4 @@
 import './AlertPage.scss'
-import img from '../../assets/images/border1.webp'
 
 const AlertPage = ({ setIsAlert }) => {
     return (
@@ -7,7 +6,7 @@ const AlertPage = ({ setIsAlert }) => {
             <div
                 className="alert-conatiner"
                 style={{
-                    borderImage: `url(${img}) 30 stretch`
+                    borderImage: `url(https://github.com/trvinhky/image_app/blob/main/movie_app/border.jpg?raw=true) 30 stretch`
                 }}
             >
                 <h2 className="alert-title">
