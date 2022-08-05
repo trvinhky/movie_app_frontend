@@ -52,6 +52,17 @@
             }
         }
 
+        @media (max-width: 450px) {
+            .footer-infor {
+                display: block;
+
+                .footer-infor__left {
+                    width: 100%;
+                    margin-bottom: 30px;
+                }
+            }
+        }
+
         .footer-author {
             text-align: center;
             font-size: 16px;

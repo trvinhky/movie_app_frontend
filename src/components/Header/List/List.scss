@@ -1,0 +1,30 @@
+.list {
+    position: fixed;
+    top: 72px;
+    right: 0;
+    width: 40%;
+    background-color: #fff;
+    color: #000;
+    z-index: 9;
+    padding: 10px 0;
+    transition: translate 0.5s ease, visibility 0.2s ease, opacity 0.3s ease;
+    transform: translateX(100%);
+    visibility: hidden;
+    opacity: 0;
+
+    @media (max-width: 450px) {
+        width: 50%;
+    }
+
+    .list-choose {
+
+        .list-choose__item {
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 25px;
+            white-space: nowrap;
+        }
+    }
+}

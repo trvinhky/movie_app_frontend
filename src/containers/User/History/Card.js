@@ -27,7 +27,6 @@ const Card = ({ category, contentId, handleDeleteClick, movieId }) => {
             }
         })
     }
-    console.log(movieId)
 
     return (
         <>

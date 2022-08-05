@@ -13,9 +13,37 @@
             flex: 1;
         }
 
+        @media (max-width: 450px) {
+            .home-slider {
+               width: 100%;
+               height: 200px;
+            }
+        }
+
         .home-top {
             width: 30%;
             padding: 10px;
+        }
+
+        @media (max-width: 820px) {
+            .home-top {
+                width: 40%;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .home-top {
+                margin-top: 30px;
+                width: 100%;
+                height: 300px;
+            }
+        }
+    }
+
+    @media (max-width: 450px) {
+        .home-header {
+            display: block;
+            height: unset;
         }
     }
 
@@ -120,6 +148,9 @@
         .home-footer__paging {
             display: flex;
             gap: 10px;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
 
             .home-footer__item {
                 border: 1px solid $primary-color;

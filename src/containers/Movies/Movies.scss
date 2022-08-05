@@ -11,6 +11,10 @@
                 font-weight: 500;
                 text-transform: uppercase;
                 padding-bottom: 20px;
+
+                @media (max-width: 450px) {
+                    font-size: 18px;
+                }
             }
 
             .movies-cast__group {

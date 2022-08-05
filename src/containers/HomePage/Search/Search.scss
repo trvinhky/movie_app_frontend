@@ -7,6 +7,12 @@
         padding-bottom: 5px;
     }
 
+    @media (max-width: 450px) {
+        .top-search__title {
+            font-size: 16px;
+        }
+    }
+
     .top-search__list {
         padding: 10px 0;
         overflow-y: auto;
@@ -40,6 +46,12 @@
                     -webkit-line-clamp: 1;
                     text-overflow: ellipsis;
                     overflow: hidden;
+                }
+
+                @media (max-width: 450px) {
+                    .top-search-item__title {
+                        font-size: 14px;
+                    }
                 }
             }
         }

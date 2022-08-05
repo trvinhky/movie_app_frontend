@@ -10,7 +10,9 @@ const Search = ({ title }) => {
     useEffect(() => {
         (async () => {
             const { data } = await getSearchLeaderBoard()
-            setListSearch(data.list)
+            if (data) {
+                setListSearch(data.list)
+            }
         })()
 
     }, [])

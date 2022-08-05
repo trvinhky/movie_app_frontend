@@ -71,6 +71,12 @@
                 }
             }
 
+            @media (max-width: 820px) {
+                .group-btn {
+                    display: none;
+                }
+            }
+
             .avatar {
                 position: relative;
 
@@ -83,7 +89,24 @@
                     width: 40px;
                     height: 40px;
                     border-radius: 50%;
-                    cursor: pointer;
+                    pointer-events: none;
+
+                    @media (max-width: 820px) {
+                        pointer-events: inherit;
+                    }
+                    
+                    img {
+                        object-fit: cover;
+                    }
+                }
+
+                #toggle:checked {
+
+                    &~.list {
+                        transform: translateX(0);
+                        visibility: visible;
+                        opacity: 1;
+                    }
                 }
 
                 .avatar-choose {
@@ -125,6 +148,24 @@
                     }
                 }
             }
+        }
+
+        @media (max-width: 450px) {
+            .header-nav__link {
+                gap: 20px;
+            }
+
+            .header-nav__group {
+                gap: 10px;
+            }
+        }
+
+    }
+
+    @media (max-width: 820px) {
+        .header-nav {
+            width: 100%;
+            padding: 15px 10px;
         }
     }
 }

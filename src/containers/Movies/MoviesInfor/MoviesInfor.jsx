@@ -13,7 +13,17 @@ const MoviesInfor = ({ data }) => {
         autoplaySpeed: 2000,
         nextArrow: <SampleNextArrow />,
         prevArrow: <SamplePrevArrow />,
-        pauseOnHover: true
+        pauseOnHover: true,
+        responsive: [
+            {
+                breakpoint: 820,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    initialSlide: 1
+                }
+            }
+        ]
     }
 
     const navigate = useNavigate()

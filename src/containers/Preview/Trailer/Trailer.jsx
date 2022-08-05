@@ -1,7 +1,6 @@
 import './Trailer.scss'
 import { useState, useEffect } from 'react'
 import ReactPlayer from 'react-player'
-import img from '../../../assets/images/background-3d.jpg'
 import { postPreviewVideoMedia } from '../../../services/APIServices'
 import _ from 'lodash'
 
@@ -44,7 +43,7 @@ const Trailer = ({ data, setIsLoading }) => {
         url: trailer?.mediaUrl,
         width: '100%',
         height: '100%',
-        light: img,
+        light: 'https://github.com/trvinhky/image_app/blob/main/movie_app/background-3d.jpg?raw=true',
         playing: playing,
         controls: true
     }

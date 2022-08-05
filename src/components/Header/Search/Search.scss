@@ -9,6 +9,10 @@
     background-color: $white-color;
     border-radius: 10px;
 
+    @media (max-width: 450px) {
+        width: unset;
+    }
+
     .search-input {
         flex: 1;
         font-size: 18px;

@@ -48,12 +48,22 @@
             gap: 30px;
             padding: 20px 40px;
 
+            
+            @media (max-width: 820px) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
             .movie-infor__left {
                 overflow: hidden;
                 border-radius: 10px;
                 box-shadow: 0 0 5px $white-color;
                 width: 30%;
                 height: 100%;
+
+                @media (max-width: 820px) {
+                    width: 50%;
+                }
 
                 img {
                     width: 100%;
@@ -70,6 +80,10 @@
                     font-size: 30px;
                     font-weight: 600;
                     text-align: center;
+
+                    @media (max-width: 450px) {
+                        font-size: 18px;
+                    }
                 }
 
                 p {
@@ -92,6 +106,10 @@
                     }
                 }
 
+                @media (max-width: 450px) {
+                    font-size: 14px;
+                }
+
                 .movie-infor__category {
                     padding-top: 30px;
                     display: flex;
@@ -101,10 +119,12 @@
                         padding-right: 5px;
                         color: $primary-color;
                         font-weight: 600;
+                        white-space: nowrap;
                     }
 
                     .movie-infor__list {
                         display: flex;
+                        flex-wrap: wrap;
 
                         .movie-infor__item {
                             padding-left: 8px;

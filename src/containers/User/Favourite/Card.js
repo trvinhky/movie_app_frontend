@@ -41,11 +41,12 @@ const Card = ({ category, contentId, handleDeleteClick, movieId }) => {
                             dataMovie.name
                         )}
                     >
-                        <img
+                        <div
                             className="favourite-card__img"
-                            src={dataMovie.coverVerticalUrl}
-                            alt={dataMovie.name}
-                        />
+                            style={{
+                                backgroundImage: `url(${dataMovie.coverVerticalUrl})`
+                            }}
+                        ></div>
                         <div className="favourite-card__content">
                             <h3 className="favourite-card__name">
                                 {dataMovie.name}

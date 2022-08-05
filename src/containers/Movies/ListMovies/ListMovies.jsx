@@ -11,7 +11,24 @@ const ListMovies = ({ title, data }) => {
         slidesToScroll: 1,
         speed: 500,
         nextArrow: <SampleNextArrow />,
-        prevArrow: <SamplePrevArrow />
+        prevArrow: <SamplePrevArrow />,
+        responsive: [
+            {
+                breakpoint: 820,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    initialSlide: 1
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
     }
 
     const navigate = useNavigate()

@@ -105,6 +105,8 @@ const Video = ({ data, category, contentId }) => {
                 return definition += result
             })
 
+            console.log(1)
+
             const history = {
                 userId: userInfor.id,
                 contentId,
@@ -123,34 +125,33 @@ const Video = ({ data, category, contentId }) => {
     return (
         <div className="video">
             {movies &&
-                <div className="video-container">
-                    <ReactPlayer
-                        {...playingProps}
-                        onStart={() => handleOnStart()}
-                        onError={() => handleOnError()}
-                    />
-                    <div className="video-controls">
-                        <i className="fa-solid fa-bars"></i>
-                        <div className="video-quality">
-                            <p className="video-quality__title">Chất lượng</p>
-                            <div className="video-quality__list">
-                                {quality?.length > 0 &&
-                                    quality.map((item, i) => (
-                                        <button
-                                            className={
-                                                activeIndex === i
-                                                    ? "video-quality__item active"
-                                                    : "video-quality__item"
-                                            }
-                                            key={i}
-                                            onClick={() => handleChangeQuality(i)}
-                                        >{item.description}</button>
-                                    ))
-                                }
-                            </div>
+                <>
+                    <div className="video-container">
+                        <ReactPlayer
+                            {...playingProps}
+                            onStart={() => handleOnStart()}
+                            onError={() => handleOnError()}
+                        />
+                    </div>
+                    <div className="video-quality">
+                        <p className="video-quality__title">Chất lượng</p>
+                        <div className="video-quality__list">
+                            {quality?.length > 0 &&
+                                quality.map((item, i) => (
+                                    <button
+                                        className={
+                                            activeIndex === i
+                                                ? "video-quality__item active"
+                                                : "video-quality__item"
+                                        }
+                                        key={i}
+                                        onClick={() => handleChangeQuality(i)}
+                                    >{item.description}</button>
+                                ))
+                            }
                         </div>
                     </div>
-                </div>
+                </>
             }
         </div>
     )

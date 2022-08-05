@@ -3,11 +3,11 @@ import './HomePage.scss'
 import ListBanner from '../../components/ListBanner/ListBanner'
 import Header from '../../components/Header/Header'
 import Footer from '../../components/Footer/Footer'
-import { getDataHome, getPreviewVideos } from '../../services/APIServices'
+import { getDataHome } from '../../services/APIServices'
 import React, { useEffect, useState } from 'react'
 import { MAX_PAGE } from '../../untils'
 import Loading from '../../components/Loading/Loading'
-import { useNavigate } from 'react-router-dom'
+//import { useNavigate } from 'react-router-dom'
 import Search from './Search/Search'
 import { useDispatch, useSelector } from 'react-redux'
 import { handleSetPage, selectPage } from '../../stores/userFeature/selectors'
@@ -16,8 +16,8 @@ const HomePage = () => {
     const [banner, setBanner] = useState([])
     const [listData, setListData] = useState([])
     const [isLoading, setIsLoading] = useState(true)
-    const [previewData, setPreviewData] = useState([])
-    const navigate = useNavigate()
+    //const [previewData, setPreviewData] = useState([])
+    //const navigate = useNavigate()
     const dispatch = useDispatch()
     const page = useSelector(selectPage)
 
@@ -42,28 +42,28 @@ const HomePage = () => {
 
     }, [page])
 
-    useEffect(() => {
-        (async () => {
-            const { data } = await getPreviewVideos(page)
-            if (data) {
-                setPreviewData(data)
-                setIsLoading(false)
-            } else {
-                setIsLoading(true)
-            }
-        })()
+    // useEffect(() => {
+    //     (async () => {
+    //         const { data } = await getPreviewVideos(page)
+    //         if (data) {
+    //             setPreviewData(data)
+    //             setIsLoading(false)
+    //         } else {
+    //             setIsLoading(true)
+    //         }
+    //     })()
 
-    }, [page])
+    // }, [page])
 
     const handlePaging = (e) => {
         dispatch(handleSetPage(e.target.value))
     }
 
-    const handleGoPreview = (data) => {
-        navigate(`/preview/${data.name}`, {
-            state: { data }
-        })
-    }
+    // const handleGoPreview = (data) => {
+    //     navigate(`/preview/${data.name}`, {
+    //         state: { data }
+    //     })
+    // }
 
     return (
         <>
@@ -93,7 +93,7 @@ const HomePage = () => {
                                             title={item.homeSectionName}
                                             data={item.recommendContentVOList}
                                         />
-                                        {previewData?.length > 0
+                                        {/* {previewData?.length > 0
                                             && previewData.length > i
                                             && <div className="home-more">
                                                 <div className="home-more__title">
@@ -125,7 +125,7 @@ const HomePage = () => {
                                                     </div>
                                                 </div>
                                             </div>
-                                        }
+                                        } */}
                                     </React.Fragment>
                                 ))
                             }

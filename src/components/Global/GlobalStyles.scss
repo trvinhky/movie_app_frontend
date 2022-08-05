@@ -24,3 +24,9 @@ body {
         opacity: 0.8;
     }
 }
+
+@media (max-width: 450px) {
+    .logo {
+        font-size: 25px;
+    }
+}
