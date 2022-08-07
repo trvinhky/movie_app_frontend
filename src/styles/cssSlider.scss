@@ -96,17 +96,26 @@ $letterStagger: 0.1s;
             transform: translateY(20px);
             
             @include subTextsActiveSlide;
+
+            @media (max-width: 450px) {
+                font-size: 18px;
+            }
         }
     
         &-heading {
             $fontSize: 25px;   
             display: flex;
-            margin-bottom: 20px;
+            margin-bottom: 20px; 
             font-size: $fontSize;
             letter-spacing: 2px;
             padding: 0 20px;
             text-align: center;
             line-height: 1.5;
+
+            @media (max-width: 450px) {
+                font-size: 20px;
+            }
+
             
             span {
                 display: block;

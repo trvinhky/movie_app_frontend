@@ -9,6 +9,10 @@
             font-weight: 600;
             text-transform: uppercase;
             padding-bottom: 20px;
+
+            @media (max-width: 450px) {
+                font-size: 18px;
+            }
         }
 
         .list-movies__box {
@@ -34,6 +38,10 @@
                     -webkit-line-clamp: 2;
                     text-overflow: ellipsis;
                     overflow: hidden;
+
+                    @media (max-width: 450px) {
+                        font-size: 16px;
+                    }
                 }
             }
 
