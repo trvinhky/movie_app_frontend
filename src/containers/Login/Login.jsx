@@ -9,6 +9,7 @@ import { useNavigate, useLocation } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { userLogIn } from '../../stores/userFeature/thunks'
 import _ from 'lodash'
+import Loading from './../../components/Loading/Loading'
 
 const Login = () => {
     const [accountName, setAccountName] = useState('')
@@ -18,6 +19,7 @@ const Login = () => {
     const [avatar, setAvatar] = useState('')
     const [imgBase64, setImgBase64] = useState('')
     const [type, setType] = useState('')
+    const [isLoading, setIsLoading] = useState(false)
     const navigate = useNavigate()
     const { state } = useLocation()
     const dispatch = useDispatch()
@@ -90,19 +92,23 @@ const Login = () => {
 
     const handleSubmit = async () => {
         if (validateForm()) {
+            setIsLoading(true)
             if (type === 'login') {
                 dispatch(userLogIn({ accountName, password }))
                     .unwrap()
                     .then((result) => {
                         if (result && !_.isEmpty(result)) {
+                            setIsLoading(false)
                             toast.success('Đăng nhập thành công!')
                             clearAllDataInput()
                             navigate(path.HOME, { replace: true })
                         } else {
+                            setIsLoading(false)
                             toast.error('Đăng nhập thất bại. Vui lòng thử lại!')
                         }
                     })
                     .catch((err) => {
+                        setIsLoading(false)
                         console.log(err)
                     })
             } else {
@@ -112,9 +118,9 @@ const Login = () => {
                     image: imgBase64,
                     role: 'R1',
                 })
+                setIsLoading(false)
                 if (data?.errCode === 0) {
-                    toast.success('Tạo tài khoản thành công!')
-                    const text = 'Bạn muốn đăng nhập ngay bây giờ chứ!'
+                    const text = 'Tạo tài khoản thành công. Bạn muốn đăng nhập ngay bây giờ chứ!'
                     if (window.confirm(text)) {
                         navigate(path.LOGIN, {
                             state: {
@@ -160,108 +166,111 @@ const Login = () => {
     }
 
     return (
-        <div
-            className="login"
-            style={{
-                backgroundImage: 'url(https://github.com/trvinhky/image_app/blob/main/movie_app/background.jpg?raw=true)'
-            }}
-        >
-            <div className="container">
-                <div className="login-logo">
-                    <Link to={path.HOME}>
-                        <span className="logo">
-                            FMM
-                        </span>
-                    </Link>
-                </div>
-                <div className="login-container">
-                    {
-                        type &&
-                        <div className="login-box">
-                            <h3 className="login-title">
-                                {type === 'login' ? 'Đăng Nhập' : 'Đăng Ký'}
-                            </h3>
-                            <div className="login-form">
-                                {type !== 'login' &&
-                                    <div
-                                        className="login-avatar"
-                                        style={{ backgroundImage: `url(${avatar})` }}
-                                    >
-                                        <input
-                                            type="file"
-                                            id="avatar"
-                                            hidden
-                                            onChange={(e) => handleChangeAvatar(e)}
-                                        />
-                                        <label htmlFor="avatar">
-                                            <i className="fa-solid fa-camera"></i>
-                                        </label>
-                                    </div>
-                                }
-                                <div className="login-input">
-                                    <input
-                                        type="text"
-                                        placeholder="Nhập số điện thoại hoặc email"
-                                        value={accountName}
-                                        onChange={(e) => handleChangeInput(e, 'accountName')}
-                                    />
-                                </div>
-                                <Input
-                                    type={type}
-                                    dataFromParent={inputPassword}
-                                    handleChangeInput={handleChangeInput}
-                                />
-                                <button
-                                    className="btn-login"
-                                    onClick={() => handleSubmit()}
-                                >
+        <>
+            <div
+                className="login"
+                style={{
+                    backgroundImage: 'url(https://github.com/trvinhky/image_app/blob/main/movie_app/background.jpg?raw=true)'
+                }}
+            >
+                <div className="container">
+                    <div className="login-logo">
+                        <Link to={path.HOME}>
+                            <span className="logo">
+                                FMM
+                            </span>
+                        </Link>
+                    </div>
+                    <div className="login-container">
+                        {
+                            type &&
+                            <div className="login-box">
+                                <h3 className="login-title">
                                     {type === 'login' ? 'Đăng Nhập' : 'Đăng Ký'}
-                                </button>
-                            </div>
-                            {rule && <div className="login-err">
-                                <small>Vui lòng nhập chính xác thông tin tài khoản</small>
-                            </div>}
-                            {type === 'login'
-                                ? <p className="login-infor">
-                                    Quên mật khẩu?
-                                </p>
-                                : <p className="login-accept">
-                                    Bằng cách chọn "Đăng ký tài khoản",
-                                    bạn đồng ý với các <span>Điều khoản sử dụng</span>
-                                </p>
-                            }
-                            <div className="login-other">
-                                <p className="login-other__text">
-                                    <span>hoặc Tiếp tục với</span>
-                                </p>
-                                <div className="login-other__group">
-                                    <div className="login-other__icon login-other__icon--facebook">
-                                        <i className="fa-brands fa-facebook-f"></i>
+                                </h3>
+                                <div className="login-form">
+                                    {type !== 'login' &&
+                                        <div
+                                            className="login-avatar"
+                                            style={{ backgroundImage: `url(${avatar})` }}
+                                        >
+                                            <input
+                                                type="file"
+                                                id="avatar"
+                                                hidden
+                                                onChange={(e) => handleChangeAvatar(e)}
+                                            />
+                                            <label htmlFor="avatar">
+                                                <i className="fa-solid fa-camera"></i>
+                                            </label>
+                                        </div>
+                                    }
+                                    <div className="login-input">
+                                        <input
+                                            type="text"
+                                            placeholder="Nhập số điện thoại hoặc email"
+                                            value={accountName}
+                                            onChange={(e) => handleChangeInput(e, 'accountName')}
+                                        />
                                     </div>
-                                    <div className="login-other__icon login-other__icon--google">
-                                        <i className="fa-brands fa-google"></i>
+                                    <Input
+                                        type={type}
+                                        dataFromParent={inputPassword}
+                                        handleChangeInput={handleChangeInput}
+                                    />
+                                    <button
+                                        className="btn-login"
+                                        onClick={() => handleSubmit()}
+                                    >
+                                        {type === 'login' ? 'Đăng Nhập' : 'Đăng Ký'}
+                                    </button>
+                                </div>
+                                {rule && <div className="login-err">
+                                    <small>Vui lòng nhập chính xác thông tin tài khoản</small>
+                                </div>}
+                                {type === 'login'
+                                    ? <p className="login-infor">
+                                        Quên mật khẩu?
+                                    </p>
+                                    : <p className="login-accept">
+                                        Bằng cách chọn "Đăng ký tài khoản",
+                                        bạn đồng ý với các <span>Điều khoản sử dụng</span>
+                                    </p>
+                                }
+                                <div className="login-other">
+                                    <p className="login-other__text">
+                                        <span>hoặc Tiếp tục với</span>
+                                    </p>
+                                    <div className="login-other__group">
+                                        <div className="login-other__icon login-other__icon--facebook">
+                                            <i className="fa-brands fa-facebook-f"></i>
+                                        </div>
+                                        <div className="login-other__icon login-other__icon--google">
+                                            <i className="fa-brands fa-google"></i>
+                                        </div>
                                     </div>
                                 </div>
+                                {type === 'login'
+                                    ? <p className="login-choose">
+                                        Chưa có tài khoản ?
+                                        <span
+                                            onClick={() => handleClickLogin('register')}
+                                        >Đăng ký</span>
+                                    </p>
+                                    : <p className="login-choose">
+                                        Đã có tài khoản ?
+                                        <span
+                                            onClick={() => handleClickLogin('login')}
+                                        >Đăng nhập</span>
+                                    </p>
+                                }
                             </div>
-                            {type === 'login'
-                                ? <p className="login-choose">
-                                    Chưa có tài khoản ?
-                                    <span
-                                        onClick={() => handleClickLogin('register')}
-                                    >Đăng ký</span>
-                                </p>
-                                : <p className="login-choose">
-                                    Đã có tài khoản ?
-                                    <span
-                                        onClick={() => handleClickLogin('login')}
-                                    >Đăng nhập</span>
-                                </p>
-                            }
-                        </div>
-                    }
+                        }
+                    </div>
                 </div>
             </div>
-        </div>
+            {isLoading && <Loading />}
+        </>
     )
 }
 
